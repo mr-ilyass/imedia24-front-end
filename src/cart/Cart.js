@@ -27,7 +27,7 @@ export default function Cart(props) {
               return (<CartItem key={item.id} title={item.title} description={item.description} image={item.image} price={item.price} quantity={item.quantity} id={item.id}/>);
             })}
           </div>
-          <div className="total">Total: {totalPrice}DH</div>
+          <div className="total">Total: {totalPrice?.toFixed(2)}DH</div>
         </div>
       </div>
   );

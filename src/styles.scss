@@ -1,0 +1,211 @@
+@import "colors";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-right: 10px;
+
+  .nav-links {
+    width: 100%;
+    width: -moz-available;
+    /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;
+    /* Mozilla-based browsers will ignore this. */
+    width: stretch;
+  }
+
+  .logo {
+    padding: 14px 16px;
+    color: $base-color;
+    white-space: nowrap;
+  }
+
+  a {
+    float: left;
+    color: $base-color;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+
+    &.active {
+      color: $primary-color;
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 30px;
+  right: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 2px 16px;
+  height: 38px;
+  min-width: 96px;
+  min-height: 38px;
+  border: none;
+  color: #fff;
+  background-color: $primary-color;
+  transition: .2s;
+
+  &:hover {
+    background-color: $primary-color-2;
+  }
+
+  &:active {
+    background-color: $primary-color;
+    transform: scale(0.92);
+  }
+}
+
+.page-title {
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+}
+
+article {
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+
+  img {
+    max-width: 100%;
+    max-height: 210px;
+    display: block;
+    margin: 15px auto;
+  }
+
+  .image-ctn{
+    height: 200px;
+  }
+  
+
+  .item-title{
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .text {
+    padding: 20px;
+    text-align: center;
+
+    .title{
+      transition: .2s;
+      cursor: pointer;
+  
+      &:hover {
+        transform: scale(1.1);
+        border-radius: 2px;
+        color: $primary-color;
+      }
+  
+      &:active {
+        transform: scale(0.99);
+      }
+    }
+
+
+    h3 {
+      font-size: 20px;
+      padding: 15px 0px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      text-align: start;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #555;
+        font-family: 'Courgette', cursive;
+      }
+    }
+  }
+
+  .btn {
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background-color: $primary-color;
+    text-align: center;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: .2s;
+  }
+
+  .product-name {
+    font-size: 20px;
+    color: $primary-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .price {
+    font-size: 20px;
+    color: $primary-color;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: start;
+  }
+
+}
+
+.priceBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    margin-right: 5px;
+  }
+
+  span {
+    margin-left: 5px;
+  }
+  .price{
+    text-align: right;
+  }
+}

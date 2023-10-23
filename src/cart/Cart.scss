@@ -1,0 +1,228 @@
+@import "../colors";
+
+.pop-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #41414189;
+}
+
+.shopping-cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 850px;
+    max-height: 500px;
+    box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        font-size: 18px;
+        font-weight: 400;
+        border-bottom: 1px solid #E1E8EE;
+        padding: 20px 30px;
+        color: #5E6977;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .bar-btn {
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 15px;
+            }
+        }
+    }
+
+    .items {
+        height: fit-content;
+        overflow: auto;
+    }
+
+    .item {
+        padding: 20px 30px;
+        height: 120px;
+        display: flex;
+
+        .image img {
+            width: 90px;
+            padding: 20px;
+        }
+    }
+
+    .item:nth-child(3) {
+        border-top: 1px solid #E1E8EE;
+        border-bottom: 1px solid #E1E8EE;
+    }
+
+    .buttons {
+        position: relative;
+        padding-top: 30px;
+        margin-right: 60px;
+    }
+
+
+
+    .delete-btn {
+        width: 50px;
+        height: 30px;
+        background-color: red;
+        Cursor: pointer;
+
+        img {
+            width: 18px;
+        }
+    }
+
+    .total {
+        padding: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .is-active {
+        animation-name: animate;
+        animation-duration: .8s;
+        animation-iteration-count: 1;
+        animation-timing-function: steps(28);
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes animate {
+        0% {
+            background-position: left;
+        }
+
+        50% {
+            background-position: right;
+        }
+
+        100% {
+            background-position: right;
+        }
+    }
+
+
+    .description {
+        margin-right: 40px;
+        width: 450px;
+        overflow: hidden;
+    }
+
+    .price {
+        margin-right: 20px;
+        width: 100px;
+        margin-top: 10px;
+    }
+
+    .description span {
+        display: block;
+        font-size: 14px;
+        color: #43484D;
+        font-weight: 400;
+    }
+
+    .description span:first-child {
+        margin-bottom: 5px;
+    }
+
+    .description span:last-child {
+        font-weight: 300;
+        margin-top: 8px;
+        color: #86939E;
+    }
+
+    .quantity {
+        margin-right: 10px;
+        width: 200px;
+    }
+
+    .quantity input {
+        appearance: none;
+        border: none;
+        text-align: center;
+        width: 32px;
+        font-size: 16px;
+        color: #43484D;
+        font-weight: 300;
+    }
+
+    button[class*=btn] {
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        &:active {
+            transform: scale(0.92);
+        }
+    }
+
+    .btn-n {
+        width: 30px;
+        height: 30px;
+        background-color: #E1E8EE;
+
+        img {
+            width: 10px;
+        }
+    }
+
+    button:focus,
+    input:focus {
+        outline: 0;
+    }
+
+    .total-price {
+        width: 250px;
+        padding-top: 10px;
+        text-align: center;
+        font-size: 16px;
+        color: #43484D;
+        font-weight: 300;
+    }
+
+    @media (max-width: 800px) {
+        .shopping-cart {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .item {
+            height: auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image img {
+            width: 50%;
+        }
+
+        .image,
+        .quantity,
+        .description {
+            width: 100%;
+            text-align: center;
+            margin: 6px 0;
+        }
+
+        .buttons {
+            margin-right: 20px;
+        }
+    }
+}

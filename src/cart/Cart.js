@@ -23,7 +23,7 @@ export default function Cart(props) {
             </button>
           </div>
           <div className="items">
-            {cartItems.map((item, index) => {
+            {cartItems.map((item) => {
               return (<CartItem key={item.id} title={item.title} description={item.description} image={item.image} price={item.price} quantity={item.quantity} id={item.id}/>);
             })}
           </div>

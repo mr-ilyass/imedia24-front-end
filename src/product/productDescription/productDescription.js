@@ -31,8 +31,7 @@ export default function ProductDescription(props) {
 
     const fetchProductDetails = async () => {
         const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-        const data = await response.json();
-        return data;
+        return await response.json();
     };
 
     const { isLoading, isError, data, error } = useQuery(['productDetails', id], fetchProductDetails, {

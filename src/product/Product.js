@@ -47,7 +47,7 @@ export default function Product(props) {
                 <button data-testid="add-to-cart-main-button" className="btn"
                         onClick={() =>{
                     dispatch(addToCart(product)) ;
-                    ; props.handleShowNotification()
+                    props.handleShowNotification()
                 }
                 }
 
